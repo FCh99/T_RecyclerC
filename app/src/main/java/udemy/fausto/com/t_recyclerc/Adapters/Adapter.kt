@@ -5,22 +5,36 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.person_main.view.*
 
-class Adapter(context: Context, persons: Array<Person>): RecyclerView.Adapter<Adapter.Holder>() {
-    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): Holder {
+class Adapter(val context: Context, val persons: Array<Person>): RecyclerView.Adapter<Adapter.Holder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         TODO("not implemented") //To change body of created functions us File | Settings | File Templates.
     }
 
     override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return persons.count()
     }
 
-    override fun onBindViewHolder(p0: Holder, p1: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+
+
+
     }
 
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        val nameView = itemView.nameID
+        val ageView = itemView.ageID
+
+        fun bindPerson(person: Person, context: Context) {
+
+            val myPerson = person
+            println(myPerson.name)
+
+        }
 
 
     }
