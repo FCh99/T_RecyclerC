@@ -1,3 +1,7 @@
 package udemy.fausto.com.t_recyclerc.Model
 
-class Person (val name: String, val age: String)
+import java.io.Serializable
+
+class Person (val age: String, val name: String): Serializable {
+
+}

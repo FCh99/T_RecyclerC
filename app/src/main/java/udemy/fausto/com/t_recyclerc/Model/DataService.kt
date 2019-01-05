@@ -1,8 +1,9 @@
 package udemy.fausto.com.t_recyclerc.Model
 
 class DataService {
-    val persons = arrayOf<Person>(
-        Person("Fausto", "60"),
+    val persons : List<Person> = listOf(
+        Person("60", "Fausto"),
+        Person("Nacho", "45"),
         Person("Félix", "58"),
         Person("Nacho", "45"),
         Person("Aurelia", "60"),
@@ -98,3 +99,4 @@ class DataService {
 
 
 }
+
