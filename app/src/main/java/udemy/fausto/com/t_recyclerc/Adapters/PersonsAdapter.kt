@@ -32,22 +32,27 @@ class PersonsAdapter(val context: Context, val persons: List<Person>): RecyclerV
 
         val nameView = itemView.nameID
         val ageView = itemView.ageID
-
-
+        val imageView = itemView.imageViewID
 
         fun bindPerson(person: Person, context: Context) {
             nameView.text = person.name
             ageView.text = person.age
 
-            println(nameView.text) // out
+            val imageResourceId = context.resources.getIdentifier(person.image, "drawable", context.packageName)
+            imageView.setImageResource(imageResourceId)
 
             // new onclick
             itemView.setOnClickListener {
                 println("----->")
                 println(person.name)
+
+                // send by Intent
+
+
+
             }
       }
-    }
+    }  // End of PersonHolder
 
 
 

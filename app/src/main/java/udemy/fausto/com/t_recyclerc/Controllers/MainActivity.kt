@@ -27,19 +27,6 @@ class MainActivity : AppCompatActivity() {
 
         recyclerID.setHasFixedSize(true)
 
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
 
 }
