@@ -2,7 +2,7 @@ package udemy.fausto.com.t_recyclerc.Model
 
 class DataService {
     val persons : List<Person> = listOf(
-        Person("60", "Fausto"),
+        Person("Fausto", "60"),
         Person("Nacho", "45"),
         Person("Félix", "58"),
         Person("Nacho", "45"),

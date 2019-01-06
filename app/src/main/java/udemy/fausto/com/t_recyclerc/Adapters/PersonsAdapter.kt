@@ -27,20 +27,26 @@ class PersonsAdapter(val context: Context, val persons: List<Person>): RecyclerV
 
     }
 
-
-    inner class PersonHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    // can be inner class
+    class PersonHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val nameView = itemView.nameID
         val ageView = itemView.ageID
+
+
 
         fun bindPerson(person: Person, context: Context) {
             nameView.text = person.name
             ageView.text = person.age
 
+            println(nameView.text) // out
 
-        }
-
-
+            // new onclick
+            itemView.setOnClickListener {
+                println("----->")
+                println(person.name)
+            }
+      }
     }
 
 

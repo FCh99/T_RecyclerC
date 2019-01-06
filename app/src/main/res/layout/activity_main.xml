@@ -13,10 +13,12 @@
             android:text="Persons"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/personsID" android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"/>
+            android:id="@+id/personsTextViewID" android:layout_marginTop="16dp"
+            android:layout_marginLeft="64dp"/>
+
+
     <android.support.v7.widget.RecyclerView
-            app:layout_constraintTop_toBottomOf="@+id/personsID"
+            app:layout_constraintTop_toBottomOf="@+id/personsTextViewID"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="16dp" android:id="@+id/recyclerID"
             android:layout_marginBottom="8dp" android:layout_width="match_parent"
