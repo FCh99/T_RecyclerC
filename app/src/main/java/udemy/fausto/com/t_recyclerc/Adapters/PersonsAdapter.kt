@@ -1,11 +1,13 @@
 package udemy.fausto.com.t_recyclerc.Adapters
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.person_main_item.view.*
+import udemy.fausto.com.t_recyclerc.Controllers.DetailActivity
 import udemy.fausto.com.t_recyclerc.Model.Person
 import udemy.fausto.com.t_recyclerc.R.layout.person_main_item
 
@@ -46,7 +48,12 @@ class PersonsAdapter(val context: Context, val persons: List<Person>): RecyclerV
                 println("----->")
                 println(person.name)
 
-                // send by Intent
+                // TODO: send by Intent
+
+                var intent = Intent(context, DetailActivity::class.java)
+                intent.putExtra("person", person)
+                context.startActivity(intent)
+
 
 
 
