@@ -17,7 +17,6 @@ class PersonsAdapter(val context: Context, val persons: List<Person>): RecyclerV
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonHolder {
         val view = LayoutInflater.from(context).inflate(person_main_item, parent, false)
         return PersonHolder(view)
-
     }
 
     override fun getItemCount(): Int {
@@ -26,41 +25,28 @@ class PersonsAdapter(val context: Context, val persons: List<Person>): RecyclerV
 
     override fun onBindViewHolder(holder: PersonHolder, position: Int) {
         holder.bindPerson(persons[position], context)
-
     }
 
     // can be inner class
     class PersonHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val nameView = itemView.nameID
-        val ageView = itemView.ageID
-        val imageView = itemView.imageViewID
-
         fun bindPerson(person: Person, context: Context) {
-            nameView.text = person.name
-            ageView.text = person.age
 
-            val imageResourceId = context.resources.getIdentifier(person.image, "drawable", context.packageName)
-            imageView.setImageResource(imageResourceId)
+            // configurar el itemView pareándolo con una una persona
+            itemView.nameID.text = person.name
+            itemView.ageID.text = person.age
+            itemView.imageViewID.setImageResource(context.resources.getIdentifier(person.image, "drawable", context.packageName))
 
-            // new onclick
+            // onclick en el itemView
             itemView.setOnClickListener {
                 println("----->")
                 println(person.name)
-
-                // TODO: send by Intent
 
                 var intent = Intent(context, DetailActivity::class.java)
                 intent.putExtra("person", person)
                 context.startActivity(intent)
 
-
-
-
             }
       }
     }  // End of PersonHolder
-
-
-
 }

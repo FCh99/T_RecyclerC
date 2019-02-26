@@ -16,16 +16,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val persons = DataService().persons
-
-        val adapter = PersonsAdapter(this, persons)
-
-        recyclerID.adapter = adapter
-
-        val layoutManager = LinearLayoutManager(this)
-        recyclerID.layoutManager = layoutManager
-
+        recyclerID.adapter = PersonsAdapter(this, DataService().persons)
+        recyclerID.layoutManager = LinearLayoutManager(this)
         recyclerID.setHasFixedSize(true)
+
 
     }
 
